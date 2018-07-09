@@ -1,0 +1,14 @@
+.header-bar {
+  height: 10em;
+  background-image: url('../../images/mountaincity.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(220, 192, 247);
+  margin: 0 auto;
+  height: 50vh;
+}
+.header-bar h1{
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+}

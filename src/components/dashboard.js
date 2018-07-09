@@ -18,6 +18,9 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-protected-data">
                     Protected data: {this.props.protectedData}
                 </div>
+                <div className="dashboard-question-display">
+                    
+                </div>
             </div>
         );
     }
