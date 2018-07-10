@@ -13,7 +13,7 @@ export default function reducer(state = initialState, action) {
         console.log("action.data fromm reducer",action.data);
         
         return Object.assign({}, state, {
-            data: action.data[0],
+            data: action.data,
             error: null
         });
     } else if (action.type === FETCH_PROTECTED_DATA_ERROR) {

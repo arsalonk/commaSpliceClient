@@ -20,7 +20,16 @@ export class Dashboard extends React.Component {
     }
 
     render() {
-        const question = this.props.protectedData
+        const question = this.props.list[this.props.head];
+        console.log(question.questionId);
+        
+        let q = this.props.protectedData.find(q => {
+            return q.id === question.questionId            
+        });
+        console.log(q);
+        
+
+        
         // const questions = this.props.protectedData.map((question, index) => {
         return (
             <div className='text-container'>
@@ -54,7 +63,10 @@ const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data
+        protectedData: state.protectedData.data,
+        list: state.auth.currentUser.list,
+        head: state.auth.currentUser.head
+
     };
 };
 
