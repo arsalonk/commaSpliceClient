@@ -12,7 +12,7 @@ export class Dashboard extends React.Component {
     }
 
     onSubmit(values) {
-        if (values.answer === this.props.protectedData.english) {
+        if (values.answer === this.props.protectedData[this.props.head].english) {
             console.log('correct')
         } else {
             console.log('wrong')
@@ -22,39 +22,35 @@ export class Dashboard extends React.Component {
     render() {
         const question = this.props.list[this.props.head];
         console.log(question.questionId);
-        
-        let q = this.props.protectedData.find(q => {
-            return q.id === question.questionId            
+
+        let q = this.props.protectedData.map(q => {
+            if (q.id === question.questionId) {
+                return (
+                    <form
+                        onSubmit={this.props.handleSubmit(values =>
+                            this.onSubmit(values)
+                        )}>
+                        <label htmlFor="answer">{q.word}</label>
+                        <Field
+                            component={Input}
+                            type="text"
+                            name="answer"
+                            id="answer"
+                            validate={[required, nonEmpty]}
+                            autoComplete="off"
+                        />
+                        <button>check</button>
+                    </form>
+                )
+            }
         });
         console.log(q);
-        
 
-        
-        // const questions = this.props.protectedData.map((question, index) => {
         return (
             <div className='text-container'>
-                {/* <h2>{question.word}</h2> */}
-                <form
-                    onSubmit={this.props.handleSubmit(values =>
-                        this.onSubmit(values)
-                    )}>
-                    <label htmlFor="answer">{question.word}</label>
-                    <Field
-                        component={Input}
-                        type="text"
-                        name="answer"
-                        id="answer"
-                        validate={[required, nonEmpty]}
-                        autoComplete="off"
-                    />
-                    <button>check</button>
-                </form>
+                {q}
             </div>
         )
-        // })
-        // return (
-        //     <div>{questions}</div>
-        // )
     }
 }
 
@@ -73,4 +69,4 @@ const mapStateToProps = state => {
 export default requiresLogin()(reduxForm({
     form: 'answer',
     onSubmitFail: (errors, dispatch) => dispatch(focus('answer'))
-    })(connect(mapStateToProps)(Dashboard)));
+})(connect(mapStateToProps)(Dashboard)));
