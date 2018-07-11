@@ -12,6 +12,7 @@ export class Dashboard extends React.Component {
     }
 
     onSubmit(values) {
+        console.log('next question', this.props.question.next)
         this.props.dispatch(submitAnswer(this.props.question.next, this.props.id));
     }
 

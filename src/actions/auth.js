@@ -110,9 +110,28 @@ export const refreshAuthToken = () => (dispatch, getState) => {
         });
 };
 
+export const getQuestion = id => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/api/users/${id}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            // Provide our existing token as credentials to get a new one
+            Authorization: `Bearer ${authToken}`
+        },
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log('data: ', data)
+        return data
+    })
+    .catch(err => console.log(err))
+}
+
 export const submitAnswer = (head, id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken
     const decodedToken = jwtDecode(authToken);
+    console.log(decodedToken)
 
     return fetch(`${API_BASE_URL}/api/users/${id}`, {
         method: 'PUT',
@@ -124,11 +143,13 @@ export const submitAnswer = (head, id) => (dispatch, getState) => {
         body: JSON.stringify({head})
     })
         .then(res => res.json())
-        
         .then(() => {
-            console.log(decodedToken.user.list[decodedToken.user.head]);
-
-            dispatch(questionSuccess(decodedToken.user.list[decodedToken.user.head]))
+            // console.log(decodedToken.user.list[decodedToken.user.head]);
+            // dispatch(questionSuccess(decodedToken.user.list[decodedToken.user.head]))
+            return dispatch(getQuestion(id))
+        })
+        .then((newQuestion) => {
+            dispatch(questionSuccess(newQuestion))
         })
         .catch(err => console.log('err: ',err));
         
