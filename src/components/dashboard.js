@@ -15,7 +15,7 @@ export class Dashboard extends React.Component {
         if (values.answer === this.props.protectedData) {
             console.log('correct')
         } else {
-            this.props.dispatch(submitAnswer(0, this.props.id))
+            this.props.dispatch(submitAnswer(3, this.props.id))
             console.log('wrong')
         }
     }
