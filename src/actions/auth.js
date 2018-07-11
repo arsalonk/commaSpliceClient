@@ -33,12 +33,19 @@ export const authError = error => ({
     error
 });
 
+export const QUESTION_SUCCESS = 'QUESTION_SUCCESS';
+export const questionSuccess = question => ({
+    type: QUESTION_SUCCESS,
+    question
+})
+
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken));
-    dispatch(authSuccess(decodedToken.user.list[decodedToken.user.head]));
+    dispatch(authSuccess(decodedToken.user.id));
+    dispatch(questionSuccess(decodedToken.user.list[decodedToken.user.head]))
     saveAuthToken(authToken);
 };
 
@@ -100,3 +107,19 @@ export const refreshAuthToken = () => (dispatch, getState) => {
             clearAuthToken(authToken);
         });
 };
+
+export const submitAnswer = (answer, id) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken
+    return fetch(`${API_BASE_URL}/api/users/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            // Provide our existing token as credentials to get a new one
+            Authorization: `Bearer ${authToken}`
+        },
+        body: JSON.stringify({answer})
+    })
+        .then(res => res.json())
+        .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+        .catch(err => dispatch(authError(err)))
+        };

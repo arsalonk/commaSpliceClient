@@ -3,12 +3,14 @@ import {
     CLEAR_AUTH,
     AUTH_REQUEST,
     AUTH_SUCCESS,
-    AUTH_ERROR
+    AUTH_ERROR,
+    QUESTION_SUCCESS
 } from '../actions/auth';
 
 const initialState = {
     authToken: null, // authToken !== null does not mean it has been validated
     currentUser: null,
+    question: null,
     loading: false,
     error: null
 };
@@ -30,7 +32,6 @@ export default function reducer(state = initialState, action) {
         });
     } else if (action.type === AUTH_SUCCESS) {
         return Object.assign({}, state, {
-            loading: false,
             currentUser: action.currentUser
         });
     } else if (action.type === AUTH_ERROR) {
@@ -38,6 +39,12 @@ export default function reducer(state = initialState, action) {
             loading: false,
             error: action.error
         });
+    } else if (action.type === QUESTION_SUCCESS) {
+        return Object.assign({}, state, {
+            loading: false,
+            error: null,
+            question: action.question
+        })
     }
     return state;
 }
