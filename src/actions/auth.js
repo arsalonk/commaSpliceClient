@@ -43,6 +43,8 @@ export const questionSuccess = question => ({
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
+    console.log(decodedToken);
+    
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user.id));
     dispatch(questionSuccess(decodedToken.user.list[decodedToken.user.head]))
@@ -108,8 +110,10 @@ export const refreshAuthToken = () => (dispatch, getState) => {
         });
 };
 
-export const submitAnswer = (answer, id) => (dispatch, getState) => {
+export const submitAnswer = (head, id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken
+    const decodedToken = jwtDecode(authToken);
+
     return fetch(`${API_BASE_URL}/api/users/${id}`, {
         method: 'PUT',
         headers: {
@@ -117,9 +121,15 @@ export const submitAnswer = (answer, id) => (dispatch, getState) => {
             // Provide our existing token as credentials to get a new one
             Authorization: `Bearer ${authToken}`
         },
-        body: JSON.stringify({answer})
+        body: JSON.stringify({head})
     })
         .then(res => res.json())
-        .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-        .catch(err => dispatch(authError(err)))
-        };
+        
+        .then(() => {
+            console.log(decodedToken.user.list[decodedToken.user.head]);
+
+            dispatch(questionSuccess(decodedToken.user.list[decodedToken.user.head]))
+        })
+        .catch(err => console.log('err: ',err));
+        
+};

@@ -12,12 +12,7 @@ export class Dashboard extends React.Component {
     }
 
     onSubmit(values) {
-        if (values.answer === this.props.protectedData) {
-            console.log('correct')
-        } else {
-            this.props.dispatch(submitAnswer(3, this.props.id))
-            console.log('wrong')
-        }
+        this.props.dispatch(submitAnswer(this.props.question.next, this.props.id));
     }
 
     render() {

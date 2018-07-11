@@ -40,6 +40,10 @@ export default function reducer(state = initialState, action) {
             error: action.error
         });
     } else if (action.type === QUESTION_SUCCESS) {
+        console.log('QUESTION_SUCCESS CALLED');
+        console.log('state.question:',state.question);
+        
+        
         return Object.assign({}, state, {
             loading: false,
             error: null,
