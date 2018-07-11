@@ -12,7 +12,7 @@ export class Dashboard extends React.Component {
     }
 
     onSubmit(values) {
-        if (values.answer === this.props.protectedData[this.props.head].english) {
+        if (values.answer === this.props.protectedData) {
             console.log('correct')
         } else {
             console.log('wrong')
@@ -20,17 +20,14 @@ export class Dashboard extends React.Component {
     }
 
     render() {
-        const question = this.props.list[this.props.head];
-        console.log(question.questionId);
 
-        let q = this.props.protectedData.map(q => {
-            if (q.id === question.questionId) {
-                return (
-                    <form
+        return (
+            <div className='text-container'>
+                <form
                         onSubmit={this.props.handleSubmit(values =>
                             this.onSubmit(values)
                         )}>
-                        <label htmlFor="answer">{q.word}</label>
+                        <label htmlFor="answer">{this.props.question}</label>
                         <Field
                             component={Input}
                             type="text"
@@ -41,14 +38,6 @@ export class Dashboard extends React.Component {
                         />
                         <button>check</button>
                     </form>
-                )
-            }
-        });
-        console.log(q);
-
-        return (
-            <div className='text-container'>
-                {q}
             </div>
         )
     }
@@ -59,8 +48,8 @@ const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data,
-        list: state.auth.currentUser.list,
+        protectedData: state.protectedData.data.word,
+        question: state.auth.currentUser.question,
         head: state.auth.currentUser.head
 
     };
