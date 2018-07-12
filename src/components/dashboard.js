@@ -20,12 +20,12 @@ export class Dashboard extends React.Component {
         if (values.answer === this.props.question.answer) {
             console.log('correct')
             this.props.dispatch(displayAnswer(true));
-            this.props.dispatch(submitAnswer(this.props.question.next, this.props.id));
+            this.props.dispatch(submitAnswer(values.answer, this.props.id));
         } else {
             console.log('incorrect')
             this.props.dispatch(displayAnswer(false));
 
-            this.props.dispatch(submitAnswer(this.props.question.next, this.props.id));
+            this.props.dispatch(submitAnswer(values.answer, this.props.id));
         }
     }
 

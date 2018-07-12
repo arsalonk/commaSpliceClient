@@ -133,7 +133,7 @@ export const submitAnswer = (answer, id) => (dispatch, getState) => {
     const decodedToken = jwtDecode(authToken);
     console.log(decodedToken)
 
-    return fetch(`${API_BASE_URL}/api/users/${id}`, {
+    return fetch(`${API_BASE_URL}/api/users/answer`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
