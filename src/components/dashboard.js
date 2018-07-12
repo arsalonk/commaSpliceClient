@@ -12,11 +12,16 @@ export class Dashboard extends React.Component {
     }
 
     onSubmit(values) {
-        console.log('next question', this.props.question.next)
-        this.props.dispatch(submitAnswer(this.props.question.next, this.props.id));
+        if (values.answer === this.props.question.answer) {
+            console.log('correct')
+            this.props.dispatch(submitAnswer(this.props.question.next, this.props.id));
+        } else {
+            console.log('incorrect')
+            this.props.dispatch(submitAnswer(this.props.question.next, this.props.id));
+        }
     }
 
-    render() {
+    render() { 
 
         if(!this.props.loading) {return (
             <div className='text-container'>
