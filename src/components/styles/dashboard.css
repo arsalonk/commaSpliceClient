@@ -1,0 +1,15 @@
+.main-display{
+  border: 3px solid black;
+  max-width: 50%;
+  height: 15em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.farsi-display{
+  font-size: 5em;
+   
+}
+.form-input{
+  margin: 15px auto;
+}

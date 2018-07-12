@@ -12,3 +12,7 @@
   margin: 0 auto;
   text-align: center;
 }
+.logout-button{
+  float: right;
+  font-size: 18px;
+}
