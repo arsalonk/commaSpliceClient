@@ -13,3 +13,7 @@
 .form-input{
   margin: 15px auto;
 }
+
+.form-input input {
+  text-align: center;
+}
