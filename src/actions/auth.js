@@ -128,19 +128,19 @@ export const getQuestion = id => (dispatch, getState) => {
     .catch(err => console.log(err))
 }
 
-export const submitAnswer = (head, id) => (dispatch, getState) => {
+export const submitAnswer = (answer, id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken
     const decodedToken = jwtDecode(authToken);
     console.log(decodedToken)
 
     return fetch(`${API_BASE_URL}/api/users/${id}`, {
-        method: 'PUT',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             // Provide our existing token as credentials to get a new one
             Authorization: `Bearer ${authToken}`
         },
-        body: JSON.stringify({head})
+        body: JSON.stringify({answer})
     })
         .then(res => res.json())
         .then(() => {

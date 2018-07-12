@@ -14,10 +14,10 @@ export class Dashboard extends React.Component {
     onSubmit(values) {
         if (values.answer === this.props.question.answer) {
             console.log('correct')
-            this.props.dispatch(submitAnswer(this.props.question.next, this.props.id));
+            this.props.dispatch(submitAnswer(values.answer, this.props.id));
         } else {
             console.log('incorrect')
-            this.props.dispatch(submitAnswer(this.props.question.next, this.props.id));
+            this.props.dispatch(submitAnswer(values.answer, this.props.id));
         }
     }
 
