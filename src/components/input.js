@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/dashboard.css';
 
 export default class Input extends React.Component {
     componentDidUpdate(prevProps) {

@@ -6,13 +6,15 @@ import {
     AUTH_ERROR,
     QUESTION_SUCCESS
 } from '../actions/auth';
+// import { DISPLAY_ANSWER, SET_DISPLAY_NULL } from '../actions/feedback';
 
 const initialState = {
     authToken: null, // authToken !== null does not mean it has been validated
     currentUser: null,
     question: null,
     loading: false,
-    error: null
+    error: null,
+    // currentAnswer: null
 };
 
 export default function reducer(state = initialState, action) {
@@ -46,5 +48,15 @@ export default function reducer(state = initialState, action) {
             question: action.question
         })
     }
+    // else if (action.type === DISPLAY_ANSWER) {
+    //     return Object.assign({}, state, {
+    //         currentAnswer: action.truthy
+    //     })
+    // }
+    // else if (action.type === SET_DISPLAY_NULL) {
+    //     return Object.assign({}, state, {
+    //         currentAnswer: null
+    //     })
+    // }
     return state;
 }
