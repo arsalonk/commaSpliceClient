@@ -20,10 +20,14 @@
 
 .farsi-display{
   font-size: 5em;
-   
+  margin: 10px;
 }
 .form-input{
   margin: 15px auto;
+}
+
+.form-input label {
+  display: block;
 }
 
 .form-input input {

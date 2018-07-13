@@ -21,7 +21,7 @@ export class Feedback extends React.Component {
           <p>You are {this.props.correct ? "CORRECT" : "WRONG"}</p>
           <p>The English translation for {this.props.question.question} is {this.props.question.answer}</p>
           <p>You have answered this question correctly {this.props.question.correct}/{this.props.question.total} times</p>
-          <button onClick={() => this.setNull()}>Next Question</button>          
+          <button className='sub-but' onClick={() => this.setNull()}>Next Question</button>          
         </div>
 
         </div>

@@ -33,7 +33,7 @@ export class Dashboard extends React.Component {
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)
                     )}>
-                    <label className='farsi-display' htmlFor="answer">{this.props.question.question}</label>
+                    <h2 className='farsi-display'>{this.props.question.question}</h2>
                     <p>({this.props.question.pronounce})</p>
                     <p>Write the English translation below</p>
                     <Field
@@ -43,6 +43,7 @@ export class Dashboard extends React.Component {
                         id="answer"
                         validate={[required, nonEmpty]}
                         autoComplete="off"
+                        label='translation:'
                     />
                     <button className='sub-but'>check</button>
                 </form>            
