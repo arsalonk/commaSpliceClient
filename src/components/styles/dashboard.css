@@ -35,9 +35,14 @@
   border: 1px solid black
 }
 
-.sub-but {
-  background-color: gold;
-  border: 1px solid black;
+.form-button {
+  background-color: rgb(255, 253, 118);
+  border: 1px solid rgb(163, 143, 28);
+  color: black;
+  width: 100px;
+  height: 25px;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 700px) {
