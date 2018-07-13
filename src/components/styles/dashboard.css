@@ -1,12 +1,21 @@
 .main-display{
   max-width: 33%;
-  height: 15em;
+  height: 300px;
   margin: 0 auto;
   text-align: center;
-
+  padding: 10px;
   border: 1px solid black;
   background-color: rgba(255,255,255,.75);  
   margin: 10% auto;
+  position: relative;
+}
+
+#input-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%
 }
 
 .farsi-display{
@@ -19,4 +28,25 @@
 
 .form-input input {
   text-align: center;
+  border: 1px solid black
+}
+
+.sub-but {
+  background-color: gold;
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 700px) {
+  .main-display {
+    max-width: 50%;
+  }
+  .form-input input {
+    max-width: 150px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .form-input input {
+    max-width: 100px;
+  }
 }

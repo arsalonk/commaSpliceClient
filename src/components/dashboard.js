@@ -12,31 +12,29 @@ import './styles/dashboard.css';
 
 
 export class Dashboard extends React.Component {
-    componentDidMount() {
-
-    }
 
     onSubmit(values) {
         if (values.answer === this.props.question.answer) {
             console.log('correct')
             this.props.dispatch(displayAnswer(true));
-            this.props.dispatch(submitAnswer(values.answer, this.props.id));
-        } else {
+        } 
+        if (values.answer !== this.props.question.answer) {
             console.log('incorrect')
             this.props.dispatch(displayAnswer(false));
-
-            this.props.dispatch(submitAnswer(values.answer, this.props.id));
         }
+        this.props.dispatch(submitAnswer(values.answer, this.props.id));
     }
 
     render() { 
         if(!this.props.loading && this.props.currentAnswer === null) {return (
             <div className='text-container main-display'>
                 <form
+                    id='input-form'
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)
                     )}>
                     <label className='farsi-display' htmlFor="answer">{this.props.question.question}</label>
+                    <p>({this.props.question.pronounce})</p>
                     <p>Write the English translation below</p>
                     <Field
                         component={Input}
@@ -46,7 +44,7 @@ export class Dashboard extends React.Component {
                         validate={[required, nonEmpty]}
                         autoComplete="off"
                     />
-                    <button>check</button>
+                    <button className='sub-but'>check</button>
                 </form>            
             </div>
         )}

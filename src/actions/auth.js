@@ -125,13 +125,14 @@ export const getQuestion = id => (dispatch, getState) => {
         console.log('data: ', data)
         return data
     })
+    .then((newQuestion) => {
+        dispatch(questionSuccess(newQuestion))
+    })
     .catch(err => console.log(err))
 }
 
 export const submitAnswer = (answer, id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken
-    const decodedToken = jwtDecode(authToken);
-    console.log(decodedToken)
 
     return fetch(`${API_BASE_URL}/api/users/answer`, {
         method: 'POST',
@@ -143,14 +144,13 @@ export const submitAnswer = (answer, id) => (dispatch, getState) => {
         body: JSON.stringify({answer})
     })
         .then(res => res.json())
-        .then(() => {
-            // console.log(decodedToken.user.list[decodedToken.user.head]);
-            // dispatch(questionSuccess(decodedToken.user.list[decodedToken.user.head]))
-            return dispatch(getQuestion(id))
-        })
-        .then((newQuestion) => {
-            dispatch(questionSuccess(newQuestion))
-        })
+        .then(data => dispatch(questionSuccess(data)))
+        // .then(() => {
+        //     return dispatch(getQuestion(id))
+        // })
+        // .then((newQuestion) => {
+        //     dispatch(questionSuccess(newQuestion))
+        // })
         .catch(err => console.log('err: ',err));
         
 };
