@@ -42,15 +42,6 @@
 
 @media screen and (max-width: 700px) {
   .main-display {
-    max-width: 50%;
-  }
-  .form-input input {
-    max-width: 150px;
-  }
-}
-
-@media screen and (max-width: 510px) {
-  .form-input input {
-    max-width: 100px;
+    max-width: 70%;
   }
 }
