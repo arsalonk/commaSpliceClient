@@ -1,21 +1,16 @@
 import React from 'react';
-import { shallow,mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
-import LoginForm from '../components/login-form';
+import { LoginForm } from '../components/login-form';
 
-describe ('<LoginForm />', () => {
-  it('Renders without crashing', () => {  
-    shallow(<LoginForm />);
+describe('<LoginForm />', () => {
+  it('Renders without crashing', () => {
+    shallow(<LoginForm handleSubmit={() => { }} />);
   });
 
   it('Renders the login-button...', () => {
-    const wrapper = shallow(<LoginForm />);
-    expect(wrapper.contains(<h1>hhheeelllooo</h1>)).toEqual(true);
+    const wrapper = shallow(<LoginForm handleSubmit={() => { }} />);
+    expect(wrapper.hasClass('login-form')).toEqual(true);
   });
-
-
-
-
-
 
 })
