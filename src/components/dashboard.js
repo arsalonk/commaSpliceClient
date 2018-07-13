@@ -52,10 +52,7 @@ export class Dashboard extends React.Component {
             </div>
         )}
         return(
-           <Feedback 
-                answer={this.props.question.answer}
-                correct={this.props.currentAnswer}
-            />         
+           <Feedback />         
         )
 
 

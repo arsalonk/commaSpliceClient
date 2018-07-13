@@ -8,10 +8,10 @@ describe ('<LandingPage />', () => {
     shallow(<LandingPage />);
   });
 
-  // it('Renders the welcome-screen class...', () => {
-  //   const wrapper = shallow(<LandingPage />);
-  //   expect(wrapper.hasClass('welcome-screen')).toEqual(true);
-  // });
+  it('Renders the welcome-screen class...', () => {
+    const wrapper = shallow(<LandingPage />);
+    expect(wrapper.hasClass('welcome-screen')).toEqual(true);
+  });
 
 
 

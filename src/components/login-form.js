@@ -50,10 +50,7 @@ export class LoginForm extends React.Component {
                 </button>
                 <Link to="/register">Or Register here</Link>
 
-            </form>
-            // <div>
-            //     <h1>hhheeelllooo</h1>
-            // </div>
+            </form>      
         );
     }
 }

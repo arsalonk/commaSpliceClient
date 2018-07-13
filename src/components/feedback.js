@@ -18,7 +18,7 @@ export class Feedback extends React.Component {
       return (
         <div className='feedback-display main-display'>
         <div className='feed'>
-          <p>You are {this.props.correct ? "CORRECT" : "WRONG"}</p>
+          <p>You are {this.props.currentAnswer ? "Correct" : "Incorrect"}</p>
           <p>The English translation for {this.props.question.question} is {this.props.question.answer}</p>
           <p>You have answered this question correctly {this.props.question.correct}/{this.props.question.total} times</p>
           <button className='sub-but' onClick={() => this.setNull()}>Next Question</button>          
@@ -35,7 +35,7 @@ export class Feedback extends React.Component {
 const mapStateToProps = state => {
   return {
       question: state.auth.question,
-      currentAnswer: state.auth.currentAnswer,
+      currentAnswer: state.display.currentAnswer,
       id: state.auth.currentUser
   };
 };
