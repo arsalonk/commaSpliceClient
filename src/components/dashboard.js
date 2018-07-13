@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm, focus } from 'redux-form';
+import { Field, reduxForm, focus,reset } from 'redux-form';
 import Input from './input';
 import { required, nonEmpty } from '../validators';
 import requiresLogin from './requires-login';
@@ -23,6 +23,7 @@ export class Dashboard extends React.Component {
             this.props.dispatch(displayAnswer(false));
         }
         this.props.dispatch(submitAnswer(values.answer, this.props.id));
+        this.props.dispatch(reset('answer'));
     }
 
     render() { 
@@ -44,6 +45,7 @@ export class Dashboard extends React.Component {
                         validate={[required, nonEmpty]}
                         autoComplete="off"
                         label='translation:'
+                        enableReinitialize="true"
                     />
                     <button className='sub-but'>check</button>
                 </form>            

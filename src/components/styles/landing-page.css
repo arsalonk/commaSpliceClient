@@ -23,3 +23,9 @@
   font-size: 18px;
   /* font-family: 'Aladin', cursive; */
 }
+
+@media screen and (max-width: 800px) {
+  .welcome-screen{
+    max-width: 90%;
+  }
+}

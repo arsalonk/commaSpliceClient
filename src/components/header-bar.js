@@ -22,10 +22,10 @@ export class HeaderBar extends React.Component {
         }
         return (
             <div className="header-bar">
-                <img className='iran-logo logo-left' src={iranLogo} alt="symbol of Iran"/>
+                <img className='iran-logo logo-left' src={iranLogo} alt=""/>
                 <h1 className="header-h1">Learn Farsi</h1>
                 {logOutButton}
-                <img className='iran-logo logo-right' src={iranLogo} alt="symbol of Iran"/>
+                <img className='iran-logo logo-right' src={iranLogo} alt=""/>
 
                 
             </div>
