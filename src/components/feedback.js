@@ -18,11 +18,7 @@ export class Feedback extends React.Component {
       return (
         <div className='feedback-display main-display'>
         <div className='feed'>
-<<<<<<< HEAD
-          <p>You are {this.props.currentAnswer ? "CORRECT" : "WRONG"}</p>
-=======
           <p>You are {this.props.currentAnswer ? "Correct" : "Incorrect"}</p>
->>>>>>> 2b5097b55872a22982cc5873b2803771d0485a2b
           <p>The English translation for {this.props.question.question} is {this.props.question.answer}</p>
           <p>You have answered this question correctly {this.props.question.correct}/{this.props.question.total} times</p>
           <button className='form-button' onClick={() => this.setNull()}>Next Question</button>          
