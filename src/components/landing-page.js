@@ -15,7 +15,7 @@ export function LandingPage(props) {
     return (
         <div className="welcome-screen">
             <h2>Welcome to Learn Farsi!</h2>
-            <p>With our patented <a href="https://qz.com/1211561/how-to-learn-a-language-use-spaced-repetition/">spaced repetition</a> algorithm you will be able to retain what you learn much more effectively.</p>
+            <p className='desc'>With our patented <a href="https://qz.com/1211561/how-to-learn-a-language-use-spaced-repetition/">spaced repetition</a> algorithm you will be able to retain what you learn much more effectively.</p>
             <p>Login or Register below to begin!</p>
             <LoginForm />
         </div>
