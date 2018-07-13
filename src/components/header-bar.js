@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
+import iranLogo from '../images/530px-Faravahar-Gold.png';
 
 import './styles/header-bar.css';
 
@@ -21,8 +22,12 @@ export class HeaderBar extends React.Component {
         }
         return (
             <div className="header-bar">
+                <img className='iran-logo logo-left' src={iranLogo} alt="symbol of Iran"/>
                 <h1 className="header-h1">Learn Farsi</h1>
                 {logOutButton}
+                <img className='iran-logo logo-right' src={iranLogo} alt="symbol of Iran"/>
+
+                
             </div>
         );
     }

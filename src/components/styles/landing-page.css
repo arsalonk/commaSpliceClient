@@ -1,3 +1,25 @@
-.home h2{
+.welcome-screen h2{
   text-align: center;
+  /* font-family: 'Aladin', cursive; */
+
+}
+
+.welcome-screen{
+  max-width: 33%;
+  border: 1px solid black;
+  background-color: rgba(255,255,255,.75);  
+  margin: 10% auto;
+}
+.welcome-screen a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.welcome-screen a:hover {
+  color: blue;
+}
+.welcome-screen p{
+  text-align: center;
+  font-size: 18px;
+  /* font-family: 'Aladin', cursive; */
 }
