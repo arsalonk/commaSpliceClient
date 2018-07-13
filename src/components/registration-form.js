@@ -47,7 +47,7 @@ export class RegistrationForm extends React.Component {
                     label='Confirm Password:'
                 />
                 <button
-                    className="sub-but"
+                    className="form-button"
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Register

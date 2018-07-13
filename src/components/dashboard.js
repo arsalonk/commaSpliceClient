@@ -47,7 +47,7 @@ export class Dashboard extends React.Component {
                         label='translation:'
                         enableReinitialize="true"
                     />
-                    <button className='sub-but'>check</button>
+                    <button className='form-button'>check</button>
                 </form>            
             </div>
         )}
