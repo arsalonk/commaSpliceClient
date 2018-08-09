@@ -1,35 +1,31 @@
 .welcome-screen h2{
   text-align: center;
-  /* font-family: 'Aladin', cursive; */
-
+  margin: -.4em auto .3em auto;
+  font-size: 1.1em;
 }
 
 .welcome-screen{
-  max-width: 33%;
+  max-width: 66%;
   border: 1px solid black;
-  background-color: rgba(255,255,255,.75);  
-  margin: 10% auto;
+  background-color: rgba(255,255,255,.8);  
+  margin: 1.75% auto;
+  padding: 1em;
 }
 .welcome-screen a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  font-size: .8em;
 }
 .welcome-screen a:hover {
   color: blue;
 }
 .welcome-screen p{
   text-align: center;
-  font-size: 18px;
-  /* font-family: 'Aladin', cursive; */
+  font-size: .8em;
   margin-bottom: 0
 }
 
 @media screen and (max-width: 800px) {
-  .welcome-screen{
-    max-width: 90%;
-  }
-  /* .desc {
-    display: none;
-  } */
+
 }
