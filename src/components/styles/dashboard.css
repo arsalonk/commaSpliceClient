@@ -1,6 +1,6 @@
 .main-display{
   max-width: 66%;
-  height: 46vw;
+  height: 70vh;
   margin: 1vw auto;
   text-align: center;
   /* padding: 10px; */
@@ -19,8 +19,11 @@
 }
 
 .farsi-display{
-  font-size: 5em;
+  font-size: 4em;
   margin: 10px;
+}
+.pronunciation-display{
+  margin-bottom: 1em; 
 }
 
 

@@ -10,5 +10,5 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  /* background-position: 0 4em; */
+  background-position: 0 4em;
 }

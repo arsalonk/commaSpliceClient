@@ -36,7 +36,7 @@ export class Dashboard extends React.Component {
                     )}>
                     <h2 className='farsi-display'>{this.props.question.question}</h2>
                     <p className='pronunciation-display'>({this.props.question.pronounce})</p>
-                    <p>Write the English translation below</p>
+                    {/* <p>Write the English translation below:</p> */}
                     <Field
                         component={Input}
                         type="text"
@@ -44,7 +44,7 @@ export class Dashboard extends React.Component {
                         id="answer"
                         validate={[required, nonEmpty]}
                         autoComplete="off"
-                        label='translation:'
+                        label='Write the English translation below:'
                         enableReinitialize="true"
                     />
                     <button className='form-button'>check</button>
