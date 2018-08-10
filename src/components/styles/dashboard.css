@@ -29,6 +29,9 @@
     height: 35vw;
     margin: 4vw auto
   }
+  #input-form{
+    margin-top: 2vw;
+  }
 }
 @media screen and (min-height: 600px) {
   .main-display{
@@ -38,9 +41,6 @@
 @media screen and (min-width: 900px) {
   .main-display{
     height: 28vw;
-  }
-  #input-form{
-    margin-top: 2vw;
   }
 }
 @media screen and (min-height: 900px) {
@@ -53,12 +53,10 @@
 @media screen and (min-width: 1200px) {
   .main-display{
     height: 26vw;
-    margin: 8vw auto;
+    margin: 6vw auto;
     max-width: 500px;
   }
-  #input-form{
-    margin-top: 2vw;
-  }
+
   .farsi-display{
     font-size: 5em;
   }
