@@ -1,52 +1,72 @@
 .main-display{
-  max-width: 33%;
-  height: 300px;
-  margin: 0 auto;
+  max-width: 66%;
+  height: 40vw;
+  margin: 2vw auto;
   text-align: center;
-  padding: 10px;
   border: 1px solid black;
   background-color: rgba(255,255,255,.75);  
-  margin: 10% auto;
-  position: relative;
-}
-
-#input-form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 95%
 }
 
 .farsi-display{
-  font-size: 5em;
+  font-size: 4em;
   margin: 10px;
 }
-.form-input{
-  margin: 15px auto;
+.pronunciation-display{
+  margin-bottom: 1em; 
 }
 
-.form-input label {
-  display: block;
-}
 
-.form-input input {
-  text-align: center;
-  border: 1px solid black
-}
-
-.form-button {
-  background-color: rgb(255, 253, 118);
-  border: 1px solid rgb(163, 143, 28);
-  color: black;
-  width: 100px;
-  height: 25px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-@media screen and (max-width: 700px) {
-  .main-display {
-    max-width: 70%;
+@media screen and (orientation: portrait) {
+  .main-display{
+    height: 70vw;
+    margin: 8vw auto;
   }
 }
+@media screen and (min-width: 600px) {
+  .main-display{
+    max-width: 400px;
+    font-size: 1.2em;
+    height: 35vw;
+    margin: 4vw auto
+  }
+  #input-form{
+    margin-top: 2vw;
+  }
+}
+@media screen and (min-height: 600px) {
+  .main-display{
+    height: 54vw;
+  }
+}
+@media screen and (min-width: 900px) {
+  .main-display{
+    height: 28vw;
+  }
+}
+@media screen and (min-height: 900px) {
+  .main-display{
+    height: 45vw;
+    margin: 15vw auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main-display{
+    height: 26vw;
+    margin: 6vw auto;
+    max-width: 500px;
+  }
+
+  .farsi-display{
+    font-size: 5em;
+  }
+  
+}
+@media screen and (min-width: 1600px) {
+
+  .main-display{
+    height: 22vw;
+  }
+}
+
+

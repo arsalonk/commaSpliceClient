@@ -1,7 +1,30 @@
 .feed {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 95%
+  max-width: 85%;
+  margin: 2em auto;
+}
+.feed p{
+  padding: .2em;
+}
+.correctness-display{
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.correct-display{
+  color: rgb(23, 151, 23);
+  font-family: 'Aladin', cursive;
+  font-size: 1.6em;
+}
+.answer-display{
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+.feedback-form-button{
+  width: 8.5em;
+  height: 2em;
+}
+.farsi-span{
+  font-size: 1.2em;
+}
+.accuracy-display{
+  font-size: .9em;
 }

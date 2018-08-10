@@ -1,0 +1,14 @@
+/* body{
+  background-image: url('../../images/mural.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+body { 
+  background: url('../../images/mural.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 0 4em;
+}
