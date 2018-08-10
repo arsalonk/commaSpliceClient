@@ -36,7 +36,6 @@ export class Dashboard extends React.Component {
                     )}>
                     <h2 className='farsi-display'>{this.props.question.question}</h2>
                     <p className='pronunciation-display'>({this.props.question.pronounce})</p>
-                    {/* <p>Write the English translation below:</p> */}
                     <Field
                         component={Input}
                         type="text"
