@@ -1,4 +1,7 @@
-# [Learn Farsi](https://sr-client.herokuapp.com/) 
+# [Learn Farsi](https://sr-client.herokuapp.com/)
+demo account : 
+username - example
+password - password
 
 A spaced repitition app build to help people learn and practice Farsi. Once logged in the app displays a word in Farsi and asks for the English translation, once given an input the app will display whether the user was correct or incorrect, the english translation of the word, and how many times the user has gotten the answer correct for that specific word.
 
