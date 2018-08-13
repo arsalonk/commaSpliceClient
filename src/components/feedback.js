@@ -10,7 +10,6 @@ export class Feedback extends React.Component {
   setNull = () => {
     this.props.dispatch(setDisplayNull());
     this.props.dispatch(getQuestion(this.props.id))
-    // console.log('setNull called from feedback component');
   }
 
   render(){

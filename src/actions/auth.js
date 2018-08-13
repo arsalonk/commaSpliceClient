@@ -43,7 +43,6 @@ export const questionSuccess = question => ({
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
-    // console.log(decodedToken);
     
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user.id));
@@ -122,7 +121,6 @@ export const getQuestion = id => (dispatch, getState) => {
     })
     .then(res => res.json())
     .then(data => {
-        console.log('data: ', data)
         return data
     })
     .then((newQuestion) => {

@@ -12,11 +12,9 @@ export class Question extends React.Component {
 
   onSubmit(values) {
       if (values.answer === this.props.question.answer) {
-          console.log('correct')
           this.props.dispatch(displayAnswer(true));
       } 
       if (values.answer !== this.props.question.answer) {
-          console.log('incorrect')
           this.props.dispatch(displayAnswer(false));
       }
       this.props.dispatch(submitAnswer(values.answer, this.props.id));
