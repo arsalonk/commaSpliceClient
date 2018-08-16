@@ -6,15 +6,10 @@ import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
-import {refreshAuthToken} from '../actions/auth';
 
 import './styles/app.css';
 
 export class App extends React.Component {
-
-    componentDidMount() {
-        this.props.dispatch(refreshAuthToken())
-    }
 
     render() {
         return (

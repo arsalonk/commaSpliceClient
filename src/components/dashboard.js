@@ -5,9 +5,14 @@ import Feedback from './feedback';
 
 import './styles/dashboard.css';
 import Question from './question';
+import { refreshAuthToken } from '../actions/auth';
 
 
 export class Dashboard extends React.Component {
+
+    componentDidUpdate() {
+        this.props.dispatch(refreshAuthToken())
+    }
 
     render() { 
         if(!this.props.loading && this.props.currentAnswer === null) {return (
