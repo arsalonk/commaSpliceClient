@@ -11,6 +11,12 @@
   height: 9vw;
   margin: 3vh auto;
 }
+.logo-left{
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 .header-bar h1{
   color: black;
   font-size: 8.5vw;
