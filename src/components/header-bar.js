@@ -23,7 +23,7 @@ export class HeaderBar extends React.Component {
         return (
             <div className="header-bar">
                 <img className='iran-logo logo-left' src={iranLogo} alt=""/>
-                <h1 className="header-h1">Learn Farsi</h1>
+                <h1 className="header-h1">Comma Splice</h1>
                 {logOutButton}
                 <img className='iran-logo logo-right' src={iranLogo} alt=""/>
 
